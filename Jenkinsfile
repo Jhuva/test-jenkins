@@ -17,7 +17,9 @@ pipeline {
         stage('Build') {
             steps {
                 // Compilar el proyecto con Maven
-                sh "${MAVEN_HOME}/bin/mvn clean install"
+                script {
+                    sh "${MAVEN_HOME}/bin/mvn clean install"
+                }
             }
         }
 
@@ -28,8 +30,10 @@ pipeline {
             steps {
                 // Desplegar en el entorno de desarrollo
                 // Puedes agregar comandos o scripts específicos para el despliegue
-                sh 'echo ESTE VA CONFIGURACIONES DE DESARROLLO'
-                sh 'echo Desarrollo'
+                script {
+                    sh 'echo ESTE VA CONFIGURACIONES DE DESARROLLO'
+                    sh 'echo Desarrollo'
+                }
             }
         }
 
@@ -39,8 +43,10 @@ pipeline {
             }
             steps {
                 // Desplegar en el entorno de QA
-                sh "echo ESTE VA A AMBIENTE DE PRUEBAS"
-                sh "echo QA"
+                script {
+                    sh "echo ESTE VA A AMBIENTE DE PRUEBAS"
+                    sh "echo QA"
+                }
             }
         }
 
@@ -50,8 +56,10 @@ pipeline {
             }
             steps {
                 // Desplegar en el entorno de producción
-                sh "echo ESTE VA A AMBIENTE DE PRODUCCIÓN"
-                sh "echo PRODUCCIÓN"
+                script {
+                    sh "echo ESTE VA A AMBIENTE DE PRODUCCIÓN"
+                    sh "echo PRODUCCIÓN"
+                }
             }
         }
     }
