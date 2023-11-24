@@ -11,7 +11,6 @@ pipeline {
             steps {
                 // Clonar el repositorio de GitHub
                 checkout scm
-		        git 'https://github.com/Jhuva/test-jenkins.git'
             }
         }
 
