@@ -28,9 +28,8 @@ pipeline {
             steps {
                 // Desplegar en el entorno de desarrollo
                 // Puedes agregar comandos o scripts específicos para el despliegue
-                bat 'echo ESTE VA CONFIGURACIONES DE DESARROLLO'
-                bat 'echo Desarrollo'
-                bat 'start "Desarrollo" /B comando_de_despliegue.bat'
+                sh 'echo ESTE VA CONFIGURACIONES DE DESARROLLO'
+                sh 'echo Desarrollo'
             }
         }
 
@@ -40,9 +39,8 @@ pipeline {
             }
             steps {
                 // Desplegar en el entorno de QA
-                bat "ESTE VA A AMBIENTE DE PRUEBAS"
-                bat "QA"
-                bat 'start "QA" /B comando_de_despliegue.bat'
+                sh "echo ESTE VA A AMBIENTE DE PRUEBAS"
+                sh "echo QA"
             }
         }
 
@@ -52,9 +50,8 @@ pipeline {
             }
             steps {
                 // Desplegar en el entorno de producción
-                bat "ESTE VA A AMBIENTE DE PRODUCCIÓN"
-                bat "PRODUCCIÓN"
-                bat 'start "PRODUCCION" /B comando_de_despliegue.bat'
+                sh "echo ESTE VA A AMBIENTE DE PRODUCCIÓN"
+                sh "echo PRODUCCIÓN"
             }
         }
     }
